@@ -1,0 +1,15 @@
+TITLE = 'Title'
+LINK = 'link'
+PRICE = "Price"
+LOCATION = "Location"
+SIZE = "Size"
+ROOMS = "Rooms"
+FLOOR = "Floor"
+YEAR = "Year"
+HEATING = "Heating"
+ELEVATOR = "Elevator"
+SELLER = "Seller"
+APPARTMENT_TYPE = "Appartment_type"
+BUILDING_TYPE = "Building_type"
+WINDOWS_TYPE = "Windows_type"
+SOURCE = "Source"
