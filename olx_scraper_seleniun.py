@@ -12,8 +12,7 @@ import pandas as pd
 import time
 from pathlib import Path
 from tqdm import tqdm
-
-from CosminD.housing_predictions import constants
+import constants
 
 
 def start_driver():
