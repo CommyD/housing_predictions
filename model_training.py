@@ -134,7 +134,6 @@ df["Price_per_m2"] = df["Price"] / df["Surface"]
 df["Rooms_Surface"] = df["Rooms"] * df["Surface"]
 
 # Drop rows with missing values
-# features = ["Surface", "Rooms", "Floor", "Location", "Heating", "Appartment_type", "Seller"]
 features = ["Surface", "Rooms", "Floor", "Location", "Appartment_type", "Price_per_m2"]
 target = "Price"
 print("[INFO] Original size:", df.shape)
@@ -152,25 +151,25 @@ cleaned_path = "/Users/cosmindanaita/PycharmProjects/AI3/CosminD/housing_predict
 df.to_csv(cleaned_path, index=False)
 
 # --- Exploratory Plots ---
-# for feature in features + [target]:
-#     plt.figure(figsize=(10, 5))
-#     sns.histplot(df[feature], kde=True, bins=50)
-#     plt.title(f"Distribuția pentru {feature}")
-#     plt.xlabel(feature)
-#     plt.ylabel("Număr de apartamente")
-#     plt.tight_layout()
-#     plt.show()
-#
-#     plt.figure(figsize=(10, 2))
-#     sns.boxplot(x=df[feature])
-#     plt.title(f"Boxplot pentru {feature}")
-#     plt.tight_layout()
-#     plt.show()
-#
-# # --- Comparative Plots ---
-# sns.pairplot(df[["Price", "Surface", "Rooms", "Floor"]])
-# plt.suptitle("Corelații între variabile", y=1.02)
-# plt.show()
+for feature in features + [target]:
+    plt.figure(figsize=(10, 5))
+    sns.histplot(df[feature], kde=True, bins=50)
+    plt.title(f"Distribuția pentru {feature}")
+    plt.xlabel(feature)
+    plt.ylabel("Număr de apartamente")
+    plt.tight_layout()
+    plt.show()
+
+    plt.figure(figsize=(10, 2))
+    sns.boxplot(x=df[feature])
+    plt.title(f"Boxplot pentru {feature}")
+    plt.tight_layout()
+    plt.show()
+
+# --- Comparative Plots ---
+sns.pairplot(df[["Price", "Surface", "Rooms", "Floor"]])
+plt.suptitle("Corelații între variabile", y=1.02)
+plt.show()
 
 # Define features and target
 X = df[features]

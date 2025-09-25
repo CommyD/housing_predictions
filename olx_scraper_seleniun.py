@@ -24,29 +24,6 @@ def start_driver():
     driver = webdriver.Chrome(options=options)
     return driver
 
-# def parse_listings_from_olx(driver):
-#     listings = driver.find_elements(By.CSS_SELECTOR, ".css-1sw7q4x")
-#     data = []
-#
-#     for l in listings:
-#         try:
-#             title = l.find_element(By.TAG_NAME, "h4").get_attribute("innerText")
-#             link = l.find_element(By.TAG_NAME, "a").get_attribute("href")
-#             price = l.find_element(By.CLASS_NAME, "css-uj7mm0").get_attribute("innerText")
-#             location = l.find_element(By.CLASS_NAME, "css-vbz67q").get_attribute("innerText")
-#             size = l.find_element(By.CLASS_NAME, "css-6as4g5").get_attribute("innerText")
-#             data.append({
-#                 constants.TITLE: title,
-#                 constants.LINK: link,
-#                 constants.PRICE: price,
-#                 constants.LOCATION: location,
-#                 constants.SIZE: size,
-#             })
-#         except NoSuchElementException as e:
-#             print(f"Error getting details for {l} error={e}")
-#             continue
-#
-#     return data
 
 def parse_listings_from_storia(driver):
     time.sleep(4)
@@ -270,7 +247,3 @@ if __name__ == "__main__":
     df = scrape_olx()
     df.to_csv("/Users/cosmindanaita/PycharmProjects/AI3/CosminD/housing_predictions//raw_listings.csv", index=False)
     print(f"[DONE] Saved {len(df)} ads in /raw_listings.csv")
-    # driver = start_driver()
-    # driver.get("https://www.storia.ro/ro/oferta/apartament-3-camere-unirii-magazinul-unirea-2-bai-2-balcoane-IDDXEu")
-    # # time.sleep(5)
-    # print(parse_storia_details(driver))
